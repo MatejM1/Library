@@ -1,0 +1,27 @@
+<div class="container my-4" *ngIf="book; else notFound">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h2 class="mb-4">Uredi knjigo</h2>
+      <div class="card shadow">
+        <div class="card-body">
+          <app-book-form
+            [book]="book"
+            buttonLabel="Oddaj"
+            [isEditMode]="true"
+            (formSubmit)="updateBook($event)"
+          ></app-book-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="container my-4">
+    <div class="alert alert-danger">
+      <h4>Knjige ni v seznamu!</h4>
+      <p>Knjige, ki jo želite urediti, ni na seznamu.</p>
+      <a routerLink="/books" class="btn btn-primary">Nazaj na seznam</a>
+    </div>
+  </div>
+</ng-template>

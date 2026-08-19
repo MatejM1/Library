@@ -1,0 +1,51 @@
+{
+  "books": [
+    {
+      "title": "regional",
+      "author": "wegw",
+      "year": 2026,
+      "description": "safg",
+      "likes": 4,
+      "dislikes": 4,
+      "id": 1,
+      "imageUrl": "/assets/images/knjiga.jpg"
+    },
+    {
+      "title": "eraz",
+      "author": "wefg",
+      "year": 2026,
+      "description": "ef",
+      "likes": 3,
+      "dislikes": 4,
+      "id": 2,
+      "imageUrl": "/assets/images/knjiga.jpg"
+    },
+    {
+      "title": "efe",
+      "author": "asdfa",
+      "year": 2026,
+      "description": "sdase",
+      "likes": 5,
+      "dislikes": 3,
+      "id": 3,
+      "imageUrl": "/assets/images/knjiga.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$LSBrWoxWlpPLGdkwPQtA6.UDWUlw91Ie.EQx82vk3vWgSFtd8xdC.",
+      "id": 1
+    },
+    {
+      "email": "mari@gmail.com",
+      "password": "$2a$10$nyAGVyhj5FbxbseP3f23Huo/.EHjR.2iaeuLyBefvwdAUR/Hr6j/W",
+      "id": 2
+    },
+    {
+      "email": "a@a.com",
+      "password": "$2a$10$k6P22.pmx5jJ2JhzqNhmdelWHYvUWwmryoeIHsOkXPzJfUiFpt2da",
+      "id": 3
+    }
+  ]
+}

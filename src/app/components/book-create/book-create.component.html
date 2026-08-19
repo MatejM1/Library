@@ -1,0 +1,17 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <h2 class="mb-4">Dodaj novo knjigo</h2>
+      <div class="card shadow">
+        <div class="card-body">
+          <app-book-form
+            [book]="newBook"
+            buttonLabel="Dodaj knjigo"
+            [isEditMode]="false"
+            (formSubmit)="saveBook($event)"
+          ></app-book-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

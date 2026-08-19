@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Registracija uporabnika</h2>
+
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-naslov</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                [(ngModel)]="email"
+                required
+                email
+                #emailInput="ngModel"
+                placeholder="Vnesite vaš E-naslov"
+              />
+              <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger small">
+                Prosimo vnesite veljaven E-naslov.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Geslo</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="password"
+                required
+                minlength="6"
+                #passwordInput="ngModel"
+                placeholder="Vnesite vaše geslo"
+              />
+              <div *ngIf="passwordInput.invalid && passwordInput.touched" class="text-danger small">
+                Geslo mora biti dolgo vsaj šest znakov.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Potrdite geslo</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                name="confirmPassword"
+                [(ngModel)]="confirmPassword"
+                required
+                #confirmInput="ngModel"
+                placeholder="Potrdite vaše geslo"
+              />
+              <div *ngIf="confirmInput.invalid && confirmInput.touched" class="text-danger small">
+                Prosimo, potrdite vaše geslo.
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-success w-100"
+              [disabled]="registerForm.invalid || loading"
+            >
+              {{ loading ? 'Registriranje...' : 'Registriraj' }}
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

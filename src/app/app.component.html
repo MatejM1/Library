@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a routerLink="/home">ParaGrafika I</a>
+    </div>
+    <div class="nav-links">
+      <!-- LEVI ELEMENTI -->
+      <div class="nav-left">
+        <a routerLink="/latest" routerLinkActive="active">Nove knjige</a>
+        <a routerLink="/books" routerLinkActive="active">Seznam knjig</a>
+      </div>
+
+      <!-- DESNI ELEMENTI -->
+      <div class="nav-right">
+        <a href="mailto:paragrafika.si@yahoo.com">Kontakt</a>
+
+        <ng-container *ngIf="authService.isLoggedIn(); else loginLink">
+          <span class="user-info">👤 Vpisan: {{ authService.getUserEmail() }}</span>
+          <a (click)="logout()" class="btn btn-sm btn-outline-danger" style="cursor: pointer;">Odjava</a>
+        </ng-container>
+
+        <ng-template #loginLink>
+          <a routerLink="/login" routerLinkActive="active" class="login-link">Vpis</a>
+          <!-- Registracija je samo na login strani -->
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content">
+  <div class="inner-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>Moja knjižnica</p>
+  </div>
+</footer>

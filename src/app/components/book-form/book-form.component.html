@@ -1,0 +1,104 @@
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+  <!-- Naslov -->
+  <div class="mb-3">
+    <label for="title" class="form-label">Naslov *</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      [(ngModel)]="book.title"
+      #title="ngModel"
+      required
+      minlength="3"
+      placeholder="Vpišite naslov knjige"
+    />
+    <div *ngIf="title.invalid && title.touched" class="text-danger small">
+      <span *ngIf="title.errors?.['required']">Naslov je obvezen podatek.</span>
+      <span *ngIf="title.errors?.['minlength']">Dolžina naslova mora biti vsaj 3 znake.</span>
+    </div>
+  </div>
+
+  <!-- Avtor -->
+  <div class="mb-3">
+    <label for="author" class="form-label">Avtor *</label>
+    <input
+      type="text"
+      class="form-control"
+      id="author"
+      name="author"
+      [(ngModel)]="book.author"
+      #author="ngModel"
+      required
+      minlength="2"
+      placeholder="Vpišite avtorja knjige"
+    />
+    <div *ngIf="author.invalid && author.touched" class="text-danger small">
+      <span *ngIf="author.errors?.['required']">Avtor je obvezen podatek.</span>
+      <span *ngIf="author.errors?.['minlength']">Dolžina avtorja mora biti vsaj 2 znaka.</span>
+    </div>
+  </div>
+
+  <!-- Leto -->
+  <div class="mb-3">
+    <label for="year" class="form-label">Leto izida *</label>
+    <input
+      type="number"
+      class="form-control"
+      id="year"
+      name="year"
+      [(ngModel)]="book.year"
+      #year="ngModel"
+      required
+      min="1000"
+      [max]="currentYear"
+      placeholder="Vpišite leto izida"
+    />
+    <div *ngIf="year.invalid && year.touched" class="text-danger small">
+      <span *ngIf="year.errors?.['required']">Leto izida je obvezen podatek.</span>
+      <span *ngIf="year.errors?.['min']">Letnica mora biti vsaj 1000.</span>
+      <span *ngIf="year.errors?.['max']">Letnica ne more biti v prihodnjem času.</span>
+    </div>
+  </div>
+
+  <!-- Opis -->
+  <div class="mb-3">
+    <label for="description" class="form-label">Opis/Založnik</label>
+    <textarea
+      class="form-control"
+      id="description"
+      name="description"
+      rows="4"
+      [(ngModel)]="book.description"
+      placeholder="Vpišite založnika ali opis knjige (neobvezno)"
+    ></textarea>
+  </div>
+
+  <!-- Image URL -->
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label">URL slike</label>
+    <input
+      type="text"
+      class="form-control"
+      id="imageUrl"
+      name="imageUrl"
+      [(ngModel)]="book.imageUrl"
+      placeholder="Vpišite URL slike (npr., /assets/images/knjiga.jpg ali https://...)"
+    />
+    <div class="form-text">
+      <small>Lokalna pot: /assets/images/ime.jpg ali zunanji URL naslov</small>
+    </div>
+  </div>
+
+  <!-- Gumba -->
+  <div class="d-flex justify-content-between">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="bookForm.invalid"
+    >
+      {{ buttonLabel }}
+    </button>
+    <a routerLink="/books" class="btn btn-outline-secondary">Razveljavi</a>
+  </div>
+</form>

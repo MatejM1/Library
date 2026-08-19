@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Vpis</h2>
+
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-naslov</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                [(ngModel)]="email"
+                required
+                email
+                #emailInput="ngModel"
+                placeholder="Vpišite elektronski naslov"
+              />
+              <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger small">
+                Prosimo vnesite veljaven elektronski naslov.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Geslo</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="password"
+                required
+                minlength="6"
+                #passwordInput="ngModel"
+                placeholder="Vpišite geslo"
+              />
+              <div *ngIf="passwordInput.invalid && passwordInput.touched" class="text-danger small">
+                Geslo mora biti dolgo vsaj šest znakov.
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="loginForm.invalid || loading"
+            >
+              {{ loading ? 'Vpisovanje...' : 'Vpis' }}
+            </button>
+          </form>
+
+          <p class="text-center mt-3">
+            Nimate še odprtega računa? <a routerLink="/register">Registracija</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
