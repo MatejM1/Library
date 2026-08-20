@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, BookFormComponent],
   templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css']
+  styleUrls: []
 })
 export class BookCreateComponent {
   newBook: Book = {
@@ -22,7 +22,7 @@ export class BookCreateComponent {
     description: '',
     likes: 0,
     dislikes: 0,
-    imageUrl: ''  // ← DODAJ!
+    imageUrl: ''
   };
 
   constructor(

@@ -41,7 +41,7 @@ export class AuthService {
   if (!token) return '';
 
   try {
-    // JWT token je sestavljen iz treh delov: header.payload.signature
+    // token je sestavljen: header.payload.signature
     const payload = token.split('.')[1];
     const decoded = JSON.parse(atob(payload));
     return decoded.email || '';

@@ -23,11 +23,9 @@ export class BookService {
     return this.http.post<Book>(this.apiUrl, book);
   }
 
-  // ⬇️ TO MORA BITI TAKO ⬇️
   updateBook(id: number, book: Book): Observable<Book> {
     return this.http.put<Book>(`${this.apiUrl}/${id}`, book);
   }
-  // ⬆️ TO MORA BITI TAKO ⬆️
 
   deleteBook(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);

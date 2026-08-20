@@ -47,7 +47,7 @@ export class BookListComponent implements OnInit {
         this.loading = false;
       },
       error: (err) => {
-        console.error('Error loading books:', err);
+        console.error('Napaka pri nalaganju knjig:', err);
         this.loading = false;
       }
     });

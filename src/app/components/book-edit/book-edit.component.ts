@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, BookFormComponent],
   templateUrl: './book-edit.component.html',
-  styleUrls: ['./book-edit.component.css']
+  styleUrls: []
 })
 export class BookEditComponent implements OnInit {
   book: Book | undefined;
@@ -50,10 +50,10 @@ export class BookEditComponent implements OnInit {
   updateBook(book: Book): void {
     this.bookService.updateBook(this.bookId, book).subscribe({
       next: () => {
-        console.log('✏️ Book updated:', book);
-        this.router.navigate(['/books']);
+        console.log('Knjiga je osvežena:', book);
+        this.loadBook();
       },
-      error: (err) => console.error('Error updating book:', err)
+      error: (err) => console.error('Napaka pri osvežitvi knjige:', err)
     });
   }
 

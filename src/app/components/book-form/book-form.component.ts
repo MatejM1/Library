@@ -18,7 +18,8 @@ export class BookFormComponent {
     year: new Date().getFullYear(),
     description: '',
     likes: 0,
-    dislikes: 0
+    dislikes: 0,
+    imageUrl: ''
   };
 
   @Input() buttonLabel: string = 'Shrani';
@@ -28,9 +29,7 @@ export class BookFormComponent {
 
   currentYear: number = new Date().getFullYear();
 
-  // ⬇️ TO MORA BITI! ⬇️
   onSubmit(): void {
-    console.log('Obrazec oddan!', this.book);  // ← DODAJ TO!
     this.formSubmit.emit(this.book);
   }
 }

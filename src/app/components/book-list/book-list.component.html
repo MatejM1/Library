@@ -17,9 +17,6 @@
           [(ngModel)]="searchTerm"
           (input)="applyFilterAndSort()"
         />
-        <button class="btn btn-outline-secondary" (click)="searchTerm = ''; applyFilterAndSort()" *ngIf="searchTerm">
-          ✕
-        </button>
       </div>
     </div>
     <div class="col-md-6 text-end">
@@ -34,29 +31,17 @@
     <table class="table table-striped table-hover">
       <thead class="table-dark">
         <tr>
-          <th (click)="sort('id')" style="cursor: pointer; width: 60px;">
-            # ⬍
-          </th>
-          <th (click)="sort('title')" style="cursor: pointer;">
-            Naslov ⬍
-          </th>
-          <th (click)="sort('author')" style="cursor: pointer;">
-            Avtor ⬍
-          </th>
-          <th (click)="sort('year')" style="cursor: pointer; width: 80px;">
-            Leto ⬍
-          </th>
-          <th (click)="sort('likes')" style="cursor: pointer; width: 80px;">
-            + ⬍
-          </th>
-          <th (click)="sort('dislikes')" style="cursor: pointer; width: 80px;">
-            - ⬍
-          </th>
-          <th style="width: 200px;">Dejanja</th>
+          <th (click)="sort('id')" class="sortable id-column"># ⬍</th>
+          <th (click)="sort('title')" class="sortable">Naslov ⬍</th>
+          <th (click)="sort('author')" class="sortable">Avtor ⬍</th>
+          <th (click)="sort('year')" class="sortable year-column">Leto ⬍</th>
+          <th (click)="sort('likes')" class="sortable like-column">+ ⬍</th>
+          <th (click)="sort('dislikes')" class="sortable like-column">- ⬍</th>
+          <th class="actions-column">Dejanja</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let book of filteredBooks; let i = index">
+        <tr *ngFor="let book of filteredBooks">
           <td>{{ book.id }}</td>
           <td>
             <strong>{{ book.title }}</strong>
@@ -64,26 +49,13 @@
           </td>
           <td>{{ book.author }}</td>
           <td>{{ book.year }}</td>
-          <td>
-            <span class="badge bg-success">{{ book.likes }}</span>
-          </td>
-          <td>
-            <span class="badge bg-danger">{{ book.dislikes }}</span>
-          </td>
+          <td><span class="badge bg-success">{{ book.likes }}</span></td>
+          <td><span class="badge bg-danger">{{ book.dislikes }}</span></td>
           <td>
             <div class="btn-group btn-group-sm">
-              <!-- Podrobnosti (javno) -->
-              <a [routerLink]="['/books', book.id]" class="btn btn-outline-info">
-                Podrobnosti
-              </a>
-              <!-- Urejanje (samo prijavljeni) -->
-              <a [routerLink]="['/edit', book.id]" class="btn btn-outline-warning" *ngIf="isLoggedIn()">
-                Uredi
-              </a>
-              <!-- Brisanje (samo prijavljeni) -->
-              <button class="btn btn-outline-danger" (click)="deleteBook(book.id)" *ngIf="isLoggedIn()">
-                Izbriši
-              </button>
+              <a [routerLink]="['/books', book.id]" class="btn btn-outline-info">Podrobnosti</a>
+              <a *ngIf="isLoggedIn()" [routerLink]="['/edit', book.id]" class="btn btn-outline-warning">Uredi</a>
+              <button *ngIf="isLoggedIn()" class="btn btn-outline-danger" (click)="deleteBook(book.id)">Izbriši</button>
             </div>
           </td>
         </tr>

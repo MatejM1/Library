@@ -15,9 +15,11 @@ export const routes: Routes = [
   { path: 'latest', component: LatestComponent },
   { path: 'books', component: BookListComponent },
   { path: 'books/:id', component: BookDetailComponent },
-  // ⬇️ ZAŠČITENE POTI ⬇️
+  
+  // ZAŠČITENE POTI
   { path: 'create', component: BookCreateComponent, canActivate: [AuthGuard] },
   { path: 'edit/:id', component: BookEditComponent, canActivate: [AuthGuard] },
+  
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '/home' }

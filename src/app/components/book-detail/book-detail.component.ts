@@ -44,7 +44,7 @@ export class BookDetailComponent implements OnInit {
         this.loading = false;
       },
       error: (err) => {
-        console.error('Book not found:', err);
+        console.error('Knjiga ni najdena:', err);
         this.loading = false;
       }
     });
@@ -94,7 +94,7 @@ export class BookDetailComponent implements OnInit {
     localStorage.setItem(`vote_${this.bookId}`, this.selectedVote);
 
     this.hasVoted = true;
-    this.voteMessage = `Oddali ste glas ${this.selectedVote}! Hvala.`;
+    this.voteMessage = `Oddali ste glas! Hvala.`;
   }
 
   isLoggedIn(): boolean {

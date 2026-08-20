@@ -1,19 +1,44 @@
+/*  TABELA  */
+/* Efekt pri preletu miške čez vrstico */
 .table-hover tbody tr:hover {
   background-color: rgba(13, 110, 253, 0.05);
 }
 
+/* Izmenična obarvanost vrstic (rahlo moder odtenek) */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-bg: rgba(13, 110, 253, 0.03);
 }
 
+/* Glava tabele – onemogoči označevanje besedila */
 th {
+  -webkit-user-select: none;
   user-select: none;
 }
 
+/* Efekt pri preletu miške čez glavo tabele */
 th:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Oznake (badge) – manjša pisava */
 .badge {
   font-size: 0.75rem;
+}
+
+/*  SORTIRANJE  */
+.sortable {
+  cursor: pointer;
+}
+
+/*  ŠIRINE STOLPCEV  */
+.id-column {
+  width: 60px;
+}
+
+.year-column {
+  width: 80px;
+}
+
+.actions-column {
+  width: 200px;
 }

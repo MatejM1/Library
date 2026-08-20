@@ -8,7 +8,7 @@ import { BookService } from '../../services/book.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: []
 })
 export class HomeComponent implements OnInit {
   totalBooks: number = 0;
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       },
       error: (err) => {
-        console.error('Error loading books:', err);
+        console.error('Napaka pri nalaganju knjig:', err);
         this.loading = false;
       }
     });

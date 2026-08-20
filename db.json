@@ -21,14 +21,34 @@
       "imageUrl": "/assets/images/knjiga.jpg"
     },
     {
-      "title": "efe",
-      "author": "asdfa",
-      "year": 2026,
-      "description": "sdase",
-      "likes": 5,
-      "dislikes": 3,
-      "id": 3,
-      "imageUrl": "/assets/images/knjiga.jpg"
+      "title": "qwdcd",
+      "author": "sascccs",
+      "year": 2018,
+      "description": "dzs",
+      "likes": 0,
+      "dislikes": 1,
+      "imageUrl": "",
+      "id": 4
+    },
+    {
+      "title": "RAČUNALNIŠKI FOTOSTAVEK",
+      "author": "Žiljak Vilko",
+      "year": 1988,
+      "description": "PIS tiska in papirja, Ljubljana",
+      "likes": 1,
+      "dislikes": 0,
+      "imageUrl": "/assets/images/rf.jpg",
+      "id": 5
+    },
+    {
+      "title": "UPRAVLJANJE KVALITETOM OFSETNOG TISKA",
+      "author": "Zjakić Igor",
+      "year": 2007,
+      "description": "Hrvatska sveučilišna naklada, Zagreb",
+      "likes": 2,
+      "dislikes": 1,
+      "imageUrl": "/assets/images/ukiz.jpg",
+      "id": 6
     }
   ],
   "users": [
@@ -46,6 +66,16 @@
       "email": "a@a.com",
       "password": "$2a$10$k6P22.pmx5jJ2JhzqNhmdelWHYvUWwmryoeIHsOkXPzJfUiFpt2da",
       "id": 3
+    },
+    {
+      "email": "ab@a.com",
+      "password": "$2a$10$t46k4s3OWjPpJXT/gu0C7O4/lBqy2TuDaVifEArKYxAC1NkZBaS2u",
+      "id": 4
+    },
+    {
+      "email": "abc@a.com",
+      "password": "$2a$10$bpQ3oliP4AJorWEp3dV3XeAzA2JvzTUF6ud9Ee3d6HgDjp4eQj56y",
+      "id": 5
     }
   ]
 }

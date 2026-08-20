@@ -9,7 +9,7 @@ import { BookService } from '../../services/book.service';
   standalone: true,
   imports: [CommonModule, BookCardComponent],
   templateUrl: './latest.component.html',
-  styleUrls: ['./latest.component.css']
+  styleUrls: []
 })
 export class LatestComponent implements OnInit {
   books: Book[] = [];
@@ -25,11 +25,11 @@ export class LatestComponent implements OnInit {
     this.loading = true;
     this.bookService.getBooks().subscribe({
       next: (data) => {
-        this.books = data.slice(-10).reverse();
+        this.books = data.slice(-8).reverse();
         this.loading = false;
       },
       error: (err) => {
-        console.error('Error loading books:', err);
+        console.error('Napaka pri nalaganju knjig:', err);
         this.loading = false;
       }
     });

@@ -1,4 +1,4 @@
-/* ===== GLOBALNI RESET ===== */
+/*  GLOBALNI  */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   background-color: #f5f5f5;
 }
 
-/* ===== NAVIGACIJA ===== */
+/*  NAVIGACIJA  */
 .navbar {
   background-color: #2c3e50;
   padding: 1rem 2rem;
@@ -44,23 +44,23 @@ body {
   max-width: 100%;
 }
 
-/* LEVA SKUPINA ELEMENTOV */
+/* levi del */
 .nav-left {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  padding-left: 2rem;     /* ⬅️ ZAMIK LEVE NAVIGACIJE PROTI DESNI */
+  padding-left: 2rem;
 }
 
-/* DESNA SKUPINA ELEMENTOV - potisnjena desno */
+/* desni del */
 .nav-right {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  margin-left: auto;      /* ⬅️ TO POTISNE DESNE ELEMENTE SKRAJNO DESNO */
+  margin-left: auto;
 }
 
-/* Vse povezave v navigaciji */
+/* povezave */
 .nav-links a {
   color: #ecf0f1 !important;
   text-decoration: none;
@@ -94,59 +94,22 @@ body {
   padding: 0.25rem 0.5rem;
 }
 
-/* ===== GUMBI V NAVIGACIJI ===== */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.3s;
-}
-
-.btn-sm {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.85rem;
-}
-
-.btn-success {
-  background-color: #27ae60;
-  color: white !important;
-}
-
-.btn-success:hover {
-  background-color: #229954 !important;
-}
-
-.btn-outline-danger {
-  background-color: transparent;
-  color: #e74c3c !important;
-  border: 1px solid #e74c3c;
-}
-
-.btn-outline-danger:hover {
-  background-color: #e74c3c !important;
-  color: white !important;
-}
-
-/* ===== MAIN CONTENT ===== */
+/* main */
 .main-content {
   width: 100%;
   max-width: 100%;
-  min-height: calc(100vh - 160px); /* Odštejemo višino navbar + footer */
+  min-height: calc(100vh - 160px);
   padding: 20px;
   background-color: #f5f5f5;
 }
 
-/* NOTRANJA VSEBINA - OMEJENA ŠIRINA */
 .inner-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-/* ===== FOOTER ===== */
+/* noge */
 .footer {
   width: 100%;
   max-width: 100%;
@@ -168,7 +131,7 @@ body {
   opacity: 0.8;
 }
 
-/* ===== RESPONSIVE ===== */
+/*  odzivni  */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -185,7 +148,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding-left: 0;       /* ⬅️ NA MANJŠIH ZASLONIH BREZ ZAMIKA */
+    padding-left: 0;
   }
 
   .nav-right {

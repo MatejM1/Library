@@ -1,3 +1,4 @@
+/*  KARTICA  */
 .card {
   border-radius: 12px;
   overflow: hidden;
@@ -7,11 +8,25 @@
   border-radius: 0;
 }
 
+/*  SLIKA  */
+.book-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/*  STATISTIKA GLASOVANJA  */
+.vote-stats {
+  margin-top: 2rem;
+}
+
+/*  OZNAKE (badge)  */
 .badge {
   font-size: 1.1rem;
   padding: 8px 16px;
 }
 
+/*  GLASOVANJE - RADIO GUMBI  */
 .form-check-input {
   cursor: pointer;
 }
@@ -21,6 +36,7 @@
   font-size: 1.1rem;
 }
 
+/*  ONEMOGOČEN GUMB  */
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
